@@ -41,6 +41,17 @@ public:
         }
     }
     
+    
+    static void Display(){
+    	cout << "[";
+    	for(Node *i = head ; i != nullptr; i = i->next){
+    		cout << i->data;
+    		if(i->next!=nullptr){
+    			cout << ", ";
+			}
+		}
+		cout << "]"<<endl;
+	}
 };
 
 
