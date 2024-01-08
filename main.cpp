@@ -26,6 +26,21 @@ public:
     static Node* MakeNode(int value, Node* node) {
         return new Node(value, node);
     }
+
+    static void Add(int value) {
+        if (head == nullptr) {
+            head = MakeNode(value);
+        } else {
+            Node* f = head;
+            while (f->next != nullptr) {
+                f = f->next;
+        	}
+
+            Node* p = MakeNode(value);
+            f->next = p;
+        }
+    }
+    
 };
 
 
