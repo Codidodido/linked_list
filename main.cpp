@@ -79,9 +79,47 @@ public:
         } 
         return f;
     }
-	}
-};
 
+    static void Remove(Node* node) {
+	    if (node == nullptr || head == nullptr) {
+	        return;
+	    }
+	
+	    if (head == node) {
+	        head = node->next;
+	        delete node;
+	        return;
+	    }
+	
+	    Node* f = SearchParent(node);
+	
+	    if (f != nullptr) {
+	        if (node->next != nullptr) {
+	            f->next = node->next;
+	        } else {
+	            f->next = nullptr;
+	        }
+	
+	        delete node;
+	    }
+	}
+
+    static void Remove(int value) {
+        Node* node = Search(value);
+        Remove(node);
+    }
+
+    static void Display() {
+        cout << "[";
+        for (Node* i = head; i != nullptr; i = i->next) {
+            cout << i->data;
+            if (i->next != nullptr) {
+                cout << ", ";
+            }
+        }
+        cout << "]" << endl;
+    }
+};
 
 Node* Node::head = nullptr;
 
