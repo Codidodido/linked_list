@@ -61,6 +61,24 @@ public:
 			}
 		}
 		cout << "]"<<endl;
+    static Node* Search(int value) {
+        Node* f = head;
+        while (f != nullptr) {
+            if (f->data == value) {
+                return f;
+            }
+            f = f->next;
+        }
+        return nullptr;
+    }
+
+    static Node* SearchParent(Node* node) {
+        Node* f = head;
+        while (f != nullptr && f->next != node) {
+            f = f->next;
+        } 
+        return f;
+    }
 	}
 };
 
