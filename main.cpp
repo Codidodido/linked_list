@@ -41,6 +41,16 @@ public:
         }
     }
     
+    static void Vanish(){
+    	Node *f = head;
+    	while(f!=nullptr){
+    		Node *tmp = f;
+    		f = f->next;
+    		delete tmp;
+		}
+		
+		head = nullptr;
+	}
     
     static void Display(){
     	cout << "[";
