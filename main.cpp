@@ -14,6 +14,18 @@ public:
         this->data = _data;
         this->next = _next;
     }
+
+	static Node* MakeNode(){
+		return new Node(NULL);
+	}
+
+    static Node* MakeNode(int value) {
+        return new Node(value);
+    }
+
+    static Node* MakeNode(int value, Node* node) {
+        return new Node(value, node);
+    }
 };
 
 
